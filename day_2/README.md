@@ -121,3 +121,103 @@ db.users.remove({
 - Mongoose is a piece of software known as an Object Document Mapper (ODM).
 - This is similar to ORMs used in relational databases.
 - Mongoose enables us to set up our collections and documents in an object-oriented approach.
+- Each Mongoose-enabled application will have a schema:
+
+##### models/user.js
+
+```javascript
+//Import Mongoose module
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+//Create the schema
+var userSchema = new Schema({
+	name: String,
+	username: { type: String, required: true, unique: true },
+	email: { type: String, required: true }
+});
+
+//Set up schema as model
+var User = mongoose.model('User', userSchema);
+
+//Optional: Export user schema as module
+module.exports = User;
+```
+
+## Querying Using Mongoose
+- Once we have set up a schema we can import it as a model and run queries with it.
+
+##### app.js
+
+```javascript
+//Import user model
+var User = require("./models/user");
+
+var arun = new User({
+	name: "Arun Sood",
+	username: "arsood",
+	email: "arsood@gmail.com"
+});
+
+arun.save(function(err) {
+	console.log("User saved successfully");
+});
+```
+
+##### Find all
+
+```javascript
+User.find({}, function(err, users) {
+	console.log(users);
+});
+```
+
+##### Find one
+
+```javascript
+User.find({ name: "Arun Sood" }, function(err, user) {
+	console.log(user);
+});
+```
+
+##### Find by ID
+
+```javascript
+User.findById(1, function(err, user) {
+	console.log(user);
+});
+```
+
+##### Update
+
+```javascript
+User.findById(1, function(err, user) {
+	user.name = "George Simmons";
+	
+	user.save(function(err) {
+		console.log("Update complete!");
+	});
+});
+```
+
+##### Delete
+
+```javascript
+User.findById(1, function(err, user) {
+
+	user.remove(function(err) {
+		console.log("Remove complete!");
+	});
+	
+});
+```
+
+## Mongoose Lab
+- In this lab we will be putting these concepts together with your learnings on HTML.
+- We will be creating an inventory management system using MongoDB and Mongoose.
+- Here are the steps you will have to follow:
+	- Step 1: Set up a new node application that has three routes - show products, add a product, and edit product.
+	- Step 2: Create a form that allows users to enter a new product.
+	- Step 3: Set up a MongoDB database with Mongoose to save the product information into a collection.
+	- Step 4: Create the functionality to update and delete a specific product.
+	- **Bonus:** Use Bootstrap to make the UI look professional.
