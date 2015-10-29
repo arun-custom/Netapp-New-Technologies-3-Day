@@ -121,6 +121,12 @@ db.users.remove({
 - Mongoose is a piece of software known as an Object Document Mapper (ODM).
 - This is similar to ORMs used in relational databases.
 - Mongoose enables us to set up our collections and documents in an object-oriented approach.
+- First we have to connect Mongoose to MongoDB:
+
+```javascript
+mongoose.connect('mongodb://127.0.0.1/myappdatabase');
+```
+
 - Each Mongoose-enabled application will have a schema:
 
 ##### models/user.js
@@ -129,8 +135,6 @@ db.users.remove({
 //Import Mongoose module
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
-mongoose.connect('mongodb://127.0.0.1/myappdatabase');
 
 //Create the schema
 var userSchema = new Schema({
