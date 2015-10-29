@@ -189,7 +189,7 @@ User.find({ name: "Arun Sood" }, function(err, user) {
 ##### Find by ID
 
 ```javascript
-User.findById(1, function(err, user) {
+User.findById("563260fe513cd6ca16b46afc", function(err, user) {
 	console.log(user);
 });
 ```
@@ -197,7 +197,7 @@ User.findById(1, function(err, user) {
 ##### Update
 
 ```javascript
-User.findById(1, function(err, user) {
+User.findById("563260fe513cd6ca16b46afc", function(err, user) {
 	user.name = "George Simmons";
 	
 	user.save(function(err) {
@@ -209,7 +209,7 @@ User.findById(1, function(err, user) {
 ##### Delete
 
 ```javascript
-User.findById(1, function(err, user) {
+User.findById("563260fe513cd6ca16b46afc", function(err, user) {
 
 	user.remove(function(err) {
 		console.log("Remove complete!");
