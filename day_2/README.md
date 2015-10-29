@@ -130,6 +130,8 @@ db.users.remove({
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+mongoose.connect('mongodb://127.0.0.1/myappdatabase');
+
 //Create the schema
 var userSchema = new Schema({
 	name: String,
