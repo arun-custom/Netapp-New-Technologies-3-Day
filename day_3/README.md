@@ -79,3 +79,20 @@ docker push arsood/docker_hello_world
 - In partners, each of you should create a simple Node application using Express that prints out "Hello <partner's name>!" on the root route.
 - Each of you will then push your images to Docker Hub.
 - You will then pull each other's image and run it on your virtual machine.
+
+## Putting It Together Lab
+- For this lab we are going to put all of the concepts we learned together by building an application with the full MEAN stack.
+- We will be using the HTML already created for you [here](chirp_html/).
+- Your goal is to create an API with Node that will render JSON from a Mongo database.
+- The application will render that JSON into the template through Angular.
+- We will work on this application in a series of steps:
+	- Step 1: Create the API in Node that performs CRUD operations on a Chirp.
+	- Step 2: Connect the views to the application as EJS files.
+	- Step 3: Activate the functionality via the $http module in Angular.
+	- **Bonus:** When the edit button is clicked for a chirp, show the same bird on the edit page.
+
+##### Starter code: To render JSON from Node
+
+```javascript
+res.json(userData);
+```
