@@ -76,7 +76,7 @@ docker push arsood/docker_hello_world
 
 ## Docker Lab
 - In this lab we will be building images in pairs and learning how to pull them and run them.
-- In partners, each of you should create a simple Node application using Express that prints out "Hello <partner's name>!" on the root route.
+- In partners, each of you should create a simple Node application using Express that prints out "Hello [partner's name]!" on the root route.
 - Each of you will then push your images to Docker Hub.
 - You will then pull each other's image and run it on your virtual machine.
 
